@@ -2,9 +2,10 @@ package types
 
 import (
 	"errors"
-	"github.com/coming-chat/go-sui/v2/sui_types"
 	"math/big"
 	"sort"
+
+	"github.com/coming-chat/go-sui/v2/sui_types"
 )
 
 const SUI_COIN_TYPE = "0x2::sui::SUI"
@@ -36,7 +37,7 @@ func (c *Coin) Reference() *sui_types.ObjectRef {
 	}
 }
 
-type CoinPage = Page[Coin, sui_types.ObjectID]
+type CoinPage = Page[Coin, string]
 
 func (c *Coin) IsSUI() bool {
 	return c.CoinType == SUI_COIN_TYPE
